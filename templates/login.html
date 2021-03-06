@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Login - LMS</title>
+</head>
+
+<body>
+    <div class="form-cont" id="form">
+        <form class="form" action="/login" method="POST">
+            {% csrf_token %}
+            <h3 class="hdr">LOGIN</h3>
+            <div class="input-cont">
+                <input class="tbox" type="text" name="user_id" autocomplete="off" id="user_id" maxlength="9" placeholder="User Id">
+                <input class="tbox" type="password" name="password" id="pwd" maxlength="12" placeholder="Password">
+            </div>
+            <span class="error">{{data}}</span>
+            <input class="btn" type="submit" value="Login">
+        </form>
+    </div>
+    <div class="link-cont">
+        <a class="link" href="#">Forgot Password?</a>
+        <a class="link" href="#">Create an account</a>
+    </div>
+</body>
+
+</html>
